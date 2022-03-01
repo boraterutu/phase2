@@ -1,0 +1,110 @@
+
+# product.java 
+package com.phase24;
+
+public class Product {
+private int id;
+private String pname;
+private String ptype;
+private int pprice;
+public Product() {}
+public int getId() {
+return id;
+}
+public void setId(int id) {
+this.id = id;
+}
+public String getPname() {
+return pname;
+}
+public void setPname(String pname) {
+this.pname = pname;
+}
+public String getPtype() {
+return ptype;
+}
+public void setPtype(String ptype) {
+this.ptype = ptype;
+}
+public int getPprice() {
+return pprice;
+}
+public void setPprice(int pprice) {
+this.pprice = pprice;
+}
+}
+ 
+#details.jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:useBean id="product" class="com.phase24.Product" scope="session"></jsp:useBean>
+<h3>Product Details : </h3>
+<br><table >
+<tr>
+<th>Product ID </th>
+<th>Product Name </th>
+<th>Product Type </th>
+<th>Product Price </th>
+</tr>
+<tr>
+<td><jsp:getProperty property="id" name="product"/></td>
+<td><jsp:getProperty property="pname" name="product"/></td>
+<td><jsp:getProperty property="ptype" name="product"/></td>
+<td><jsp:getProperty property="pprice" name="product" /></td>
+</tr>
+</table>
+</body>
+</html>
+
+
+#header.jsp
+
+
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<h1>welcome to this page</h1>
+</center>
+</body>
+</html>
+
+
+
+#pcature.jsp
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="pcature.jsp" method="post">
+<center>
+<h2>Please fiil the Product detail</h2>
+<br>
+Product Id : <input type = "text" name="id"><br><br>
+Product Name : <input type = "text" name="pname"><br><br>
+Product Type : <input type = "text" name="ptype"><br><br>
+Product Price : <input type = "text" name="pprice"><br><br>
+<br><br>
+<input type = "submit" value = "Submit">
+</center>
+</form>
+</body>
+</html>
